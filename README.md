@@ -33,8 +33,6 @@ pip install praw
 
 #### 2.1 Create a Reddit Account
 
-If you don't have a Reddit account, create one here.
-
 #### 2.2 Create a Reddit Developer App
 
 Go to Reddit Preferences > Apps.
