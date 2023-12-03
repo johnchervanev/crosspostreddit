@@ -52,9 +52,13 @@ Copy the cross-posting script provided.
 Open the script in a text editor and replace placeholders with your values:
 
 'example_user' with the Reddit username to monitor.
+
 'source_subreddit' with the subreddit to monitor.
+
 ['destination_subreddit1', 'destination_subreddit2', '...'] with the list of destination subreddits.
+
 'your_client_id', 'your_client_secret', 'your_username', and 'your_password' with values from the Reddit app.
+
 4. Run the Script
 4.1 Run the Script
 Open a terminal/command prompt, navigate to the script's directory, and run:
