@@ -22,17 +22,21 @@ PIP is the package installer for Python. You likely have it installed with Pytho
 pip --version
 ```
 
-1.3 Install PRAW
+#### 1.3 Install PRAW
+
 PRAW is the Python Reddit API Wrapper. Install it using:
 
 ```bash
 pip install praw
 ```
 ### 2. Create Reddit App
-2.1 Create a Reddit Account
+
+#### 2.1 Create a Reddit Account
+
 If you don't have a Reddit account, create one here.
 
-2.2 Create a Reddit Developer App
+#### 2.2 Create a Reddit Developer App
+
 Go to Reddit Preferences > Apps.
 Scroll down to the "Developed Applications" section.
 Click on "Create App" or "Create Another App."
@@ -41,14 +45,17 @@ Enter a name, description, and about-url (can be any valid URL).
 Set the permissions to "read" (required for reading posts).
 Enter a random string as the redirect URI (e.g., http://localhost:8080).
 Click "Create app."
-2.3 Retrieve API Credentials
+#### 2.3 Retrieve API Credentials
+
 After creating the app, note down the client ID (under the app name) and the client secret (in the app's details).
 
 ### 3. Configure the Script
-3.1 Download the Script
+#### 3.1 Download the Script
+
 Copy the cross-posting script provided.
 
-3.2 Edit the Script
+#### 3.2 Edit the Script
+
 Open the script in a text editor and replace placeholders with your values:
 
 'example_user' with the Reddit username to monitor.
@@ -60,7 +67,9 @@ Open the script in a text editor and replace placeholders with your values:
 'your_client_id', 'your_client_secret', 'your_username', and 'your_password' with values from the Reddit app.
 
 ### 4. Run the Script
-4.1 Run the Script
+
+#### 4.1 Run the Script
+
 Open a terminal/command prompt, navigate to the script's directory, and run:
 
 ```bash
@@ -68,6 +77,7 @@ python script_name.py
 ```
 Replace script_name.py with your script's filename.
 
-4.2 Observe Output
+#### 4.2 Observe Output
+
 The script should start monitoring for new posts and print messages when it cross-posts. Check for errors or exceptions in the terminal.
 
