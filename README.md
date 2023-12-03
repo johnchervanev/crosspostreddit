@@ -28,7 +28,7 @@ PRAW is the Python Reddit API Wrapper. Install it using:
 ```bash
 pip install praw
 ```
-2. Create Reddit App
+### 2. Create Reddit App
 2.1 Create a Reddit Account
 If you don't have a Reddit account, create one here.
 
@@ -44,7 +44,7 @@ Click "Create app."
 2.3 Retrieve API Credentials
 After creating the app, note down the client ID (under the app name) and the client secret (in the app's details).
 
-3. Configure the Script
+### 3. Configure the Script
 3.1 Download the Script
 Copy the cross-posting script provided.
 
@@ -59,7 +59,7 @@ Open the script in a text editor and replace placeholders with your values:
 
 'your_client_id', 'your_client_secret', 'your_username', and 'your_password' with values from the Reddit app.
 
-4. Run the Script
+### 4. Run the Script
 4.1 Run the Script
 Open a terminal/command prompt, navigate to the script's directory, and run:
 
