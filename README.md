@@ -1,105 +1,110 @@
-# Crosspostreddit
-
-# Reddit Cross-Posting Bot
+# Reddit Cross-Posting Script
 
 ## Overview
 
-Automated Reddit cross-posting bot written in Python using PRAW, designed to monitor a specified user's new posts in a source subreddit and cross-post them to a list of destination subreddits with a 5-minute delay between each cross-post.
+This Python script utilizes the PRAW (Python Reddit API Wrapper) library to cross-post submissions from a source subreddit to multiple destination subreddits. The script is designed to work with multiple Reddit users, each specified in the `config.ini` file.
 
 ## Setup Instructions
 
-### 1. Set Up Python Environment
+### Step 1: Set Up Environment
 
-#### 1.1 Install Python
+1. **Python Installation:**
+   - Ensure you have Python 3.x installed on your system. You can download it from [python.org](https://www.python.org/downloads/).
 
-If you don't have Python installed, download and install it from the [official Python website](https://www.python.org/downloads/). Make sure to add Python to your system's PATH during installation.
+2. **Virtual Environment (Optional but recommended):**
+   - Create a virtual environment to isolate dependencies:
+     ```bash
+     python3 -m venv venv
+     source venv/bin/activate   # On Windows, use "venv\Scripts\activate"
+     ```
 
-#### 1.2 Install PIP
+### Step 2: Install Dependencies
 
-PIP is the package installer for Python. You likely have it installed with Python, but you can check by running:
+3. **Install Required Packages:**
+   - Install the necessary Python packages using pip:
+     ```bash
+     pip install praw requests
+     ```
 
-```bash
-pip --version
-```
+### Step 3: Reddit Developer Account and API Credentials
 
-#### 1.3 Install PRAW
+4. **Create Reddit Developer Account:**
+   - Go to [Reddit's App Preferences](https://www.reddit.com/prefs/apps).
+   - Scroll down to the "Developed Applications" section and click on the "Create App" button.
 
-PRAW is the Python Reddit API Wrapper. Install it using:
+5. **Fill Out the Form:**
+   - Choose the script type as "script."
+   - Set the name and description as per your preference.
+   - Set the "about url" and "permissions" to your preference.
+   - Enter "http://localhost:8080" as the "redirect uri."
 
-```bash
-pip install praw
-```
+6. **Retrieve API Credentials:**
+   - After creating the app, you will find your `client_id` and `client_secret` on the app details page. Note these down; you will need them for configuration.
 
-### 2. Create Reddit App
+### Step 4: Configure Git and Clone Repository
 
-#### 2.1 Create a Reddit Account
+7. **Install Git (if not installed):**
+   - Download and install Git from [git-scm.com](https://git-scm.com/downloads).
 
-#### 2.2 Create a Reddit Developer App
+8. **Configure Git:**
+   - Set up your Git username and email:
+     ```bash
+     git config --global user.name "Your Name"
+     git config --global user.email "your.email@example.com"
+     ```
 
-Go to Reddit Preferences > Apps.
-Scroll down to the "Developed Applications" section.
-Click on "Create App" or "Create Another App."
-Choose "script" as the app type.
-Enter a name, description, and about-url (can be any valid URL).
-Set the permissions to "read" (required for reading posts).
-Enter a random string as the redirect URI (e.g., http://localhost:8080).
-Click "Create app."
+9. **Clone the Repository:**
+   - Clone the repository to your local machine:
+     ```bash
+     git clone https://github.com/yourusername/repo.git
+     cd repo
+     ```
 
-#### 2.3 Retrieve API Credentials
+### Step 5: Configuration
 
-After creating the app, note down the client ID (under the app name) and the client secret (in the app's details).
+10. **Edit Config File:**
+    - Open the `config.ini` file and fill in the required information:
+      - Set `client_id`, `client_secret`, `username`, `password`, `user_agent` for each Reddit user.
+      - Specify the source and destination subreddits, proxy settings, and delays.
 
-### 3. Configure Git on Your Local Computer
+### Step 6: Run the Script
 
-#### 3.1 Install Git
+11. **Run the Script:**
+    - Execute the Python script:
+      ```bash
+      python script_name.py
+      ```
+      Replace `script_name.py` with the actual name of your Python script.
 
-If you don't have Git installed, download and install it from the [official Git website](https://git-scm.com/downloads/). Follow the installation instructions for your operating system.
+12. **Observe Output:**
+    - The script will log information to the console and create log files (`crosspost_log.txt`, `error_log.txt`) for reference.
 
-#### 3.2 Configure Git Identity
+## Default Precautions
 
-Open a terminal/command prompt and set your Git username and email:
+- **Rate Limiting:**
+  - Be aware of Reddit API rate limits. The script includes basic rate limit checking, but avoid excessive requests to prevent temporary restrictions.
 
-```bash
-git config --global user.name "Your Name"
-git config --global user.email "your.email@example.com"
-```
+- **Proxy Usage:**
+  - If using proxies, ensure they are reliable and properly configured. Check the console and `error_log.txt` for proxy-related issues.
 
-### 4. Clone the Repository using GitHub Desktop
+- **Script Adjustments:**
+  - Adjust script settings cautiously, considering Reddit's policies and the communities involved.
 
-#### 4.1 Install GitHub Desktop
+## Usage Clauses
 
-If you don't have GitHub Desktop installed, download and install it from the [official GitHub Desktop website](https://desktop.github.com/).
+- **Respect Reddit's Policies:**
+  - Ensure compliance with [Reddit's API Terms](https://www.redditinc.com/policies/data-api-terms).
 
-#### 4.2 Clone the Repository
+- **Community Guidelines:**
+  - Follow the guidelines of the subreddits involved in cross-posting.
 
-Open GitHub Desktop, click on "File" in the menu, and select "Clone Repository." Choose the URL tab, paste the repository URL, and specify the local path for the clone.
+- **Account Safety:**
+  - Keep API credentials secure. Do not share sensitive information.
 
-### 5. Configure the Script
+- **Logging and Monitoring:**
+  - Monitor script outputs and logs regularly for any unusual activity or errors.
 
-#### 5.1 Edit the Script
+- **Legal Compliance:**
+  - Ensure your activities comply with applicable laws and regulations.
 
-Open the script in a text editor and replace placeholders with your values:
-
-'example_user' with the Reddit username to monitor.
-
-'source_subreddit' with the subreddit to monitor.
-
-['destination_subreddit1', 'destination_subreddit2', '...'] with the list of destination subreddits.
-
-'your_client_id', 'your_client_secret', 'your_username', and 'your_password' with values from the Reddit app.
-
-### 6. Run the Script
-
-#### 6.1 Run the Script
-
-Open a terminal/command prompt, navigate to the script's directory, and run:
-
-```bash
-python script_name.py
-```
-
-Replace script_name.py with your script's filename.
-
-#### 6.2 Observe Output
-
-The script should start monitoring for new posts and print messages when it cross-posts. Check for errors or exceptions in the terminal.
+Congratulations! You've successfully set up and run the Reddit cross-posting script. Adjust configurations as needed for your specific use case.
